@@ -201,16 +201,16 @@ class BookingDialog(CancelAndHelpDialog):
         TELEMETRY_CLIENT = ApplicationInsightsTelemetryClient(INSTRUMENTATION_KEY, telemetry_processor=AiohttpTelemetryProcessor(), client_queue_size=10)       
         if step_context.result:
             #tester si l'envoie se fait correctement vers Azure insight
-            print('insights P10_FLIGHTBOOKINGBOT 1')
+            print('insights botflyemeinsights 1')
             TELEMETRY_CLIENT.track_trace('good', details_insights, 'details')
             #self.telemetry_client.track_trace('good', details_insights, 'details')
             TELEMETRY_CLIENT.flush()
-            print('insights P10_FLIGHTBOOKINGBOT 2')
+            print('insights botflyemeinsights 2')
             return await step_context.end_dialog(booking_details)
-        print('insights P10_FLIGHTBOOKINGBOT 3')
+        print('insights botflyemeinsights 3')
         TELEMETRY_CLIENT.track_trace('bad', details_insights, 'details')
         TELEMETRY_CLIENT.flush()
-        print('insights P10_FLIGHTBOOKINGBOT 4')
+        print('insights botflyemeinsights 4')
         return await step_context.end_dialog()
 
     def is_ambiguous(self, timex: str) -> bool:
